@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Ryzzan Abbade Salman – CV</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #eef2f5;
+      font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, 'Roboto', sans-serif;
+      line-height: 1.5;
+      color: #1a2c3e;
+      padding: 2rem 1rem;
+    }
+
+    /* main card */
+    .cv-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+
+    /* header with name and contacts */
+    .cv-header {
+      background: linear-gradient(135deg, #0b2b3b 0%, #1b4f6e 100%);
+      color: white;
+      padding: 2rem 2.5rem;
+    }
+
+    .cv-header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .cv-header .title-tag {
+      font-size: 1.1rem;
+      font-weight: 400;
+      opacity: 0.85;
+      border-left: 3px solid #7ab7d4;
+      padding-left: 0.75rem;
+      margin-top: 0.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 48px;
+      padding: 0.8rem 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .contact-info div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(255,255,255,0.5);
+    }
+
+    .contact-info a:hover {
+      border-bottom-color: white;
+    }
+
+    /* main body */
+    .cv-body {
+      padding: 2rem 2.5rem;
+    }
+
+    /* sections */
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #1b4f6e;
+      border-bottom: 3px solid #cbdde6;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+      display: inline-block;
+    }
+
+    /* summary text */
+    .summary-text {
+      font-size: 1rem;
+      color: #2c3e44;
+      background: #f8fafc;
+      padding: 1rem 1.4rem;
+      border-radius: 20px;
+      line-height: 1.55;
+    }
+
+    /* skills chips */
+    .skills-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 0.5rem;
+    }
+
+    .skill-chip {
+      background: #e9f0f5;
+      color: #1e4660;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: 0.1s ease;
+    }
+
+    /* work experience entries */
+    .job {
+      margin-bottom: 1.8rem;
+      border-left: 3px solid #7ab7d4;
+      padding-left: 1.2rem;
+    }
+
+    .job-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.4rem;
+    }
+
+    .job-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0b2b3b;
+    }
+
+    .job-company {
+      font-weight: 600;
+      color: #2c6c8f;
+    }
+
+    .job-date {
+      font-size: 0.8rem;
+      color: #5f7f92;
+      background: #ecf3f8;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+    }
+
+    .job-location {
+      font-size: 0.85rem;
+      color: #4f6f82;
+      margin-top: 0.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .job-description {
+      margin-top: 0.5rem;
+      padding-left: 0.2rem;
+    }
+
+    .job-description ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .job-description li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.92rem;
+      color: #1e3a4b;
+    }
+
+    .job-description li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #1b6b8f;
+      font-weight: 500;
+    }
+
+    /* hobbies */
+    .hobbies-text {
+      font-size: 0.95rem;
+      background: #f8fafc;
+      padding: 0.9rem 1.4rem;
+      border-radius: 20px;
+      color: #2c4e62;
+    }
+
+    hr {
+      margin: 1rem 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, #cbdde6, transparent);
+    }
+
+    @media (max-width: 720px) {
+      .cv-header, .cv-body {
+        padding: 1.5rem;
+      }
+      .cv-header h1 {
+        font-size: 2rem;
+      }
+      .job-header {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="cv-container">
+  <div class="cv-header">
+    <h1>Ryzzan Abbade Salman</h1>
+    <div class="title-tag">Full‑stack Tech Lead &amp; Architect — 20+ years of experience</div>
+    <div class="contact-info">
+      <div>📍 Maceió, Alagoas, Brazil – 57046-545</div>
+      <div>📧 <a href="mailto:rabbadesalman@gmail.com">rabbadesalman@gmail.com</a></div>
+      <div>📞 +55 82 98205-1109</div>
+    </div>
+  </div>
+
+  <div class="cv-body">
+    <!-- SUMMARY -->
+    <div class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <div class="summary-text">
+        Over 20 years of experience building web applications as a freelancer and as a team member in various companies. 
+        Passionate about solving complex problems with technology. Continuously learning and evolving skills — from 
+        frontend frameworks to backend architectures, system design, and team leadership. Strong advocate of clean documentation, 
+        agile methodologies, and modern engineering practices.
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+      <h2 class="section-title">Core Competencies</h2>
+      <div class="skills-box">
+        <span class="skill-chip">Angular / Vue / React / Next / Svelte</span>
+        <span class="skill-chip">Flutter / React Native</span>
+        <span class="skill-chip">NestJS / Express / Loopback / Fastify</span>
+        <span class="skill-chip">.NET / Laravel</span>
+        <span class="skill-chip">MongoDB / PostgreSQL / MS SQL / Firestore</span>
+        <span class="skill-chip">Playwright / Cypress / Jasmine / Jest / Mocha</span>
+        <span class="skill-chip">UML, C4 Model, OpenAPI, WSDL, JSON Schema</span>
+        <span class="skill-chip">Prompt Engineering · Business Analysis</span>
+        <span class="skill-chip">CI/CD · PR monitoring · Code quality</span>
+        <span class="skill-chip">Agile · Scrum · Kanban · OKR · BDD · TDD</span>
+        <span class="skill-chip">Python (beginner) · Go (beginner) · Rust (beginner)</span>
+      </div>
+    </div>
+
+    <!-- WORK EXPERIENCE -->
+    <div class="section">
+      <h2 class="section-title">Work Experience</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Tech Lead & Full‑stack Developer</div>
+          <div class="job-date">Nov 2024 – Present</div>
+        </div>
+        <div class="job-company">Opah IT · São Paulo, Brazil (Remote)</div>
+        <div class="job-description">
+          <ul>
+            <li>Team consolidation and motivation; production progress tracking.</li>
+            <li>CI/CD pipeline monitoring, PR activity and code quality oversight.</li>
+            <li>Complete frontend & backend restructuring; data update automation flows.</li>
+            <li>Technical documentation using UML, C4 Model, OpenAPI, WSDL, JSON schemas.</li>
+            <li>Business plan documentation with prompt engineering; development with React, React Native, Swift, .NET, NestJS, Kotlin, Java.</li>
+            <li>MongoDB, Microsoft SQL, PostgreSQL; TDD implementation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Business Manager & Full‑stack Developer</div>
+          <div class="job-date">Apr 2020 – Present</div>
+        </div>
+        <div class="job-company">Kunlatek · Maceió, Brazil</div>
+        <div class="job-description">
+          <ul>
+            <li>Design system architecture, business analysis using prompt engineering.</li>
+            <li>Requirements gathering (BDD, mind maps) and wireframing (Figma).</li>
+            <li>Scrum & Kanban (Trello), technical documentation (UML, C4, OpenAPI, WSDL, JSON Schema).</li>
+            <li>Full‑stack development: Angular, Vue, Svelte, React, Next, Flutter, React Native; backends with Loopback, NestJS, Express.</li>
+            <li>Business plan documentation and internal tooling with AI assistance.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Tech Lead / PM / Scrum Master</div>
+          <div class="job-date">Jun 2024 – Oct 2024</div>
+        </div>
+        <div class="job-company">OFM Systems · Maceió, Brazil</div>
+        <div class="job-description">
+          <ul>
+            <li>Team leadership, production monitoring and CI/CD/PR activity.</li>
+            <li>Full stack/frontend restructuring; automation of data flows.</li>
+            <li>Technical documentation (UML, C4, OpenAPI, WSDL, JSON) and business plan documentation with prompt engineering.</li>
+            <li>Development: React, Angular, Express, Laravel; MongoDB, MySQL, PL‑SQL.</li>
+            <li>Scrum master (Trello, internal tools), OKR, BDD, TDD.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Tech Lead</div>
+          <div class="job-date">Nov 2022 – Dec 2023</div>
+        </div>
+        <div class="job-company">Grupo NC · São Paulo / Hortolândia (Remote)</div>
+        <div class="job-description">
+          <ul>
+            <li>Team consolidation & motivation; full stack restructuring.</li>
+            <li>CI/CD and pull request monitoring, code quality assurance.</li>
+            <li>Technical documentation: UML, C4 Model, OpenAPI.</li>
+            <li>Angular development and Loopback backend development.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Senior Software Engineer</div>
+          <div class="job-date">Jun 2021 – Oct 2022</div>
+        </div>
+        <div class="job-company">Lopes · São Paulo, Brazil (Remote)</div>
+        <div class="job-description">
+          <ul>
+            <li>Architecture tooling definition for frontend; Angular & Loopback development.</li>
+            <li>Design system experiments and implementation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Project Manager & Full‑stack Developer</div>
+          <div class="job-date">Aug 2018 – Mar 2020</div>
+        </div>
+        <div class="job-company">ENGAPP · Maceió, Brazil</div>
+        <div class="job-description">
+          <ul>
+            <li>Business analysis, requirements gathering, wireframing & prototyping (Figma).</li>
+            <li>Scrum (Trello), technical documentation (UML, OpenAPI).</li>
+            <li>Development: Angular, Vue, Flutter, React Native; NodeJS, NestJS, Loopback.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Full‑stack Developer</div>
+          <div class="job-date">Dec 2018 – Jul 2019</div>
+        </div>
+        <div class="job-company">OFM Systems · Maceió, Brazil</div>
+        <div class="job-description">
+          <ul>
+            <li>ERP financial & inventory module development; mobile logistic solution.</li>
+            <li>Solution for service invoice processing; integration APIs.</li>
+            <li>Angular, Ionic, React; NodeJS, Express, Fastify.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Outsourcing Full‑stack Developer</div>
+          <div class="job-date">Nov 2016 – Dec 2018</div>
+        </div>
+        <div class="job-company">SENAI · Maceió, Brazil</div>
+        <div class="job-description">
+          <ul>
+            <li>Educational solutions; CMS for institutional sites; solution for industry portfolio.</li>
+            <li>Angular, React; NodeJS, Express, Fastify, .NET development.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Project Manager</div>
+          <div class="job-date">Oct 2013 – Nov 2016</div>
+        </div>
+        <div class="job-company">Pimentel Lopes Engenharia e Arquitetura · Maceió, Brazil</div>
+        <div class="job-description">
+          <ul>
+            <li>CRM and PPS modules for ERP; generic CMS for websites.</li>
+            <li>Google Cloud services management; PHP, HTML, JS, CSS, Bootstrap.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Full‑stack Developer</div>
+          <div class="job-date">May 2001 – Jan 2004</div>
+        </div>
+        <div class="job-company">Government of Amapá State · Macapá, Brazil</div>
+        <div class="job-description">
+          <ul>
+            <li>Generic CMS, internal reporting solution; financial & accounting ERP modules.</li>
+            <li>Inventory module; PHP, HTML, Javascript, CSS, Bootstrap.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOBBIES & INTERESTS -->
+    <div class="section">
+      <h2 class="section-title">Hobbies & Interests</h2>
+      <div class="hobbies-text">
+        Reading tech & political news, watching movies and series, listening to music, walking with my daughter and wife, and enjoying good food.
+      </div>
+    </div>
+
+    <hr />
+    <div style="font-size: 0.75rem; text-align: center; color: #8aa9bb; margin-top: 1rem;">
+      Ryzzan Abbade Salman — full‑stack tech lead & perpetual learner
+    </div>
+  </div>
+</div>
+</body>
+</html>
